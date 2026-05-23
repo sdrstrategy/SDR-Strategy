@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDR Strategy</title>
+  <meta name="description" content="SDR Strategy — Strategy that works. Systems • Decisions • Results." />
+
+  <style>
+    :root {
+      --page-bg: #071521;
+      --card-bg: #F6F4EF;
+      --blue: #034173;
+      --muted: #5D7286;
+      --soft: #7A8A99;
+      --border: rgba(3, 65, 115, 0.10);
+      --button-border: rgba(3, 65, 115, 0.16);
+      --button-bg: rgba(3, 65, 115, 0.035);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(3, 65, 115, 0.28), transparent 34%),
+        var(--page-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      color: var(--blue);
+    }
+
+    .card {
+      width: min(1100px, 100%);
+      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.55), transparent 34%),
+        linear-gradient(to bottom right, rgba(255,255,255,0.22), transparent 45%),
+        var(--card-bg);
+
+      border: 1px solid var(--border);
+      border-radius: 28px;
+
+      box-shadow:
+        0 2px 2px rgba(255,255,255,0.46) inset,
+        0 1px 0 rgba(255,255,255,0.82) inset,
+        0 28px 70px rgba(0,0,0,0.24),
+        0 8px 24px rgba(0,0,0,0.14);
+
+      padding: 48px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* subtle grain texture */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0.05;
+
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(0,0,0,0.5) 0.4px, transparent 0.5px),
+        radial-gradient(circle at 80% 40%, rgba(0,0,0,0.4) 0.3px, transparent 0.5px),
+        radial-gradient(circle at 30% 70%, rgba(0,0,0,0.35) 0.3px, transparent 0.5px);
+
+      background-size:
+        18px 18px,
+        22px 22px,
+        26px 26px;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+
+      box-shadow:
+        inset 0 -20px 42px rgba(3,65,115,0.025),
+        inset 0 18px 42px rgba(255,255,255,0.42);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      position: ;
+      z-index: 2;
+    }
+
+    .logo {
+      max-width: 360px;
+      height: auto;
+      display: block;
+    }
+
+    .connect {
+      margin-right: 16px;
+      text-decoration: none;
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+
+      border: 1px solid var(--button-border);
+      background: var(--button-bg);
+
+      border-radius: 999px;
+      padding: 10px 18px;
+      line-height: 1;
+
+      transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.78) inset;
+    }
+
+    .connect:hover {
+      background: rgba(3,65,115,0.06);
+      border-color: rgba(3,65,115,0.22);
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.88) inset,
+        0 8px 18px rgba(3,65,115,0.06);
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      margin-top: 24px;
+      
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 7vw, 72px);
+      line-height: 1;
+      letter-spacing: -1.5px;
+      font-weight: 500;
+      color: var(--blue);
+    }
+
+    .tagline {
+      margin-top: 34px;
+      font-size: 14px;
+      line-height: 1.3;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: var(--soft);
+    }
+
+    .signature {
+      position: relative;
+      z-index: 2;
+    }
+
+    .name {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--blue);
+    }
+
+    .title {
+      margin: 6px 0 0;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 18px;
+        align-items: stretch;
+      }
+
+      .card {
+        min-height: calc(100vh - 36px);
+        padding: 28px;
+        border-radius: 24px;
+      }
+
+      .logo {
+        max-width: 260px;
+      }
+
+      .connect {
+        font-size: 14px;
+        padding: 9px 15px;
+      }
+
+      .hero {
+        margin-top: 32px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .tagline {
+        font-size: 12px;
+        letter-spacing: 1.6px;
+        margin-top: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card" aria-label="SDR Strategy landing page">
+
+    <header class="top">
+      <img class="logo" src="logo.png" alt="SDR Strategy" />
+
+      <a
+        class="connect"
+        href="mailto:steven@sdr-strategy.com?subject=SDR%20Strategy%20Inquiry">
+        Connect
+      </a>
+    </header>
+
+    <section class="hero">
+      <h1>Strategy that works.</h1>
+
+      <div class="tagline">
+        SYSTEMS • DECISIONS • RESULTS
+      </div>
+    </section>
+
+    <footer class="signature">
+      <p class="name">Steven Delano-Rainey</p>
+      <p class="title">Founder, SDR Strategy LLC</p>
+    </footer>
+
+  </main>
+</body>
+</html>
