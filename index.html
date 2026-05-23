@@ -198,7 +198,8 @@
       }
 
       .top {
-        align-items: flex-start;
+        gap: 12px;
+        align-items: center;
         }
       
       .connect {
@@ -212,12 +213,14 @@
       }
 
       .logo {
-        max-width: 260px;
+        max-width: 190px;
       }
 
       .connect {
-        font-size: 14px;
-        padding: 9px 15px;
+        font-size: 13px;
+        padding: 8px 12px;
+        margin-right: 0;
+        flex-shrink: 0;
       }
 
       .hero {
@@ -225,8 +228,9 @@
       }
 
       h1 {
+        font-size: clamp(32px, 10vw, 42px);
         letter-spacing: -1px;
-        font-size: 42px;
+        white-space: nowrap;
       }
 
       .tagline {
