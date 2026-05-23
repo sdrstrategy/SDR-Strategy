@@ -110,6 +110,22 @@
       display: block;
     }
 
+    .logo-watermark {
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      
+      width: 340px;
+      height: auto;
+      
+      opacity: 0.045;
+      
+      pointer-events: none;
+      user-select: none;
+      
+      z-index: 1;
+    }
+
     .connect {
       margin-right: 16px;
       text-decoration: none;
@@ -249,6 +265,8 @@
 
 <body>
   <main class="card" aria-label="SDR Strategy landing page">
+    
+    <img class="logo-watermark" src="logo-circle.png" alt="">
 
     <header class="top">
       <img class="logo" src="logo.png" alt="SDR Strategy" />
