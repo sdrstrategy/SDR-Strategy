@@ -187,6 +187,29 @@
       padding-left: 4px;
     }
 
+    .about-link {
+      display: inline-block;
+      margin-top: 28px;
+      
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      
+      color: var(--blue);
+      text-decoration: none;
+      
+      opacity: 0.7;
+      
+      transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+    }
+    
+    .about-link:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+    
     .signature {
       position: relative;
       z-index: 2;
@@ -286,6 +309,8 @@
         SYSTEMS • DECISIONS • RESULTS
       </div>
     </section>
+
+    <a class="about-link" href="/about">About SDR Strategy</a>
 
     <footer class="signature">
       <p class="name">Steven Delano-Rainey</p>
