@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | SDR Strategy</title>
+
+  <style>
+    :root {
+      --blue: #034173;
+      --green: #4FB848;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 72px;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .back-link {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      max-width: 760px;
+      margin-bottom: 72px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      color: var(--blue);
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0;
+    }
+
+    section {
+      margin-bottom: 72px;
+    }
+
+    h2 {
+      color: var(--blue);
+      font-size: 2rem;
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(3, 65, 115, 0.05);
+    }
+
+    .card h3 {
+      color: var(--blue);
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border-left: 4px solid var(--green);
+      padding: 24px;
+      border-radius: 14px;
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step-number {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .step h3 {
+      color: var(--blue);
+      margin: 0 0 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .focus-list {
+      columns: 2;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .focus-list li {
+      margin-bottom: 10px;
+    }
+
+    .callout {
+      background: var(--blue);
+      color: white;
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .callout h2 {
+      color: white;
+    }
+
+    .callout p {
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 720px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      border: 1px solid white;
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 64px;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        padding: 32px 20px 56px;
+      }
+
+      header {
+        margin-bottom: 48px;
+      }
+
+      .grid-3,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-list {
+        columns: 1;
+      }
+
+      .callout {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <a class="brand" href="/">SDR Strategy</a>
+      <a class="back-link" href="/">Home</a>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Systems • Decisions • Results</div>
+      <h1>Strategy that works.</h1>
+      <p>
+        SDR Strategy helps retail and multi-unit operators turn strategy into practical execution through systems thinking, operational clarity, and implementation leadership.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I Do</h2>
+      <p class="section-intro">
+        I partner with leaders to solve operational and strategic challenges in complex environments where clarity, prioritization, and execution matter.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Systems</h3>
+          <p>Designing practical operating systems that create clarity, consistency, and scalability.</p>
+        </div>
+
+        <div class="card">
+          <h3>Decisions</h3>
+          <p>Helping teams prioritize the right work, evaluate tradeoffs, and align around measurable outcomes.</p>
+        </div>
+
+        <div class="card">
+          <h3>Results</h3>
+          <p>Translating strategy into execution through implementation planning, change management, and frontline adoption.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How I Work</h2>
+      <p class="section-intro">
+        My approach is structured, practical, and built to move from understanding to action.
+      </p>
+
+      <div class="process">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Discover</h3>
+          <p>Understand the business, operations, pain points, and opportunities.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Define</h3>
+          <p>Clarify priorities, success measures, and the problems worth solving.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Design</h3>
+          <p>Build practical solutions, systems, workflows, and implementation plans.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>Deliver</h3>
+          <p>Enable execution through communication, implementation, and sustained adoption.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Areas of Focus</h2>
+      <ul class="focus-list">
+        <li>Operational strategy</li>
+        <li>Implementation and change management</li>
+        <li>Multi-unit operations</li>
+        <li>Retail execution</li>
+        <li>Service model implementation</li>
+        <li>Process design</li>
+        <li>Cross-functional alignment</li>
+        <li>Leadership enablement</li>
+        <li>Prioritization and decision frameworks</li>
+        <li>Field communication and rollout strategy</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why SDR Strategy</h2>
+      <p class="section-intro">
+        Many firms can create strategy. Fewer can operationalize it.
+      </p>
+      <p class="section-intro">
+        SDR Strategy brings experience translating enterprise priorities into structured execution that works in the field — helping organizations move from strategic intent to practical, measurable results.
+      </p>
+    </section>
+
+    <section class="callout">
+      <h2>Let’s connect.</h2>
+      <p>
+        Whether you’re solving an operational challenge, scaling a new initiative, or looking for clearer execution, SDR Strategy can help turn strategy into action.
+      </p>
+      <a class="button" href="mailto:steven@sdr-strategy.com">Connect</a>
+    </section>
+
+    <footer>
+      © SDR Strategy
+    </footer>
+  </main>
+</body>
+</html>
